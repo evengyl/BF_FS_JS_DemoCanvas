@@ -13,4 +13,5 @@
 canvas{
     border: 1px solid grey;
     margin:10px;
+    background-color: rgb(179, 179, 179);
 }
