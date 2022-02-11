@@ -167,3 +167,61 @@ if(demo5.getContext)
 
 
 }
+
+
+var exos3 = document.getElementById("exos3")
+if(exos3.getContext)
+{
+    var ctx = exos3.getContext("2d")
+
+    ctx.beginPath()
+    ctx.fillStyle="red"
+
+    ctx.moveTo(55,50)
+    ctx.arc(50,50,5,0,Math.PI*2)
+
+    ctx.moveTo(205, 200)
+    ctx.arc(200,200,5, 0, Math.PI*2)
+
+    ctx.moveTo(355,50)
+    ctx.arc(350, 50, 5, 0, Math.PI*2)
+    
+    ctx.fill()
+    ctx.closePath()
+
+    ctx.beginPath()
+    ctx.strokeStyle = "grey"
+    ctx.moveTo(50,50)
+    ctx.lineTo(200,200)
+    ctx.lineTo(350,50)
+    ctx.stroke()
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 5
+    ctx.moveTo(50,50)
+    ctx.arcTo(200, 200, 350, 50, 210)
+    ctx.stroke()
+    ctx.closePath()
+
+}
+
+var exos3_5 = document.getElementById("exos3_5")
+if(exos3_5.getContext)
+{
+    var ctx = exos3_5.getContext("2d")
+    ctx.beginPath()
+    ctx.fillStyle = "blue"
+    ctx.fillRect(50, 50, 400,150)
+
+    ctx.strokeStyle = "pink"
+    ctx.lineCap = "round"
+
+    ctx.lineWidth = 10
+    ctx.moveTo(200, 100)
+    ctx.arc(150, 100, 50, 0, Math.PI)
+    ctx.stroke()
+    ctx.closePath()
+}
