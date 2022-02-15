@@ -686,5 +686,167 @@ if(demo13.getContext)
 var exos8 = document.getElementById("exos8")
 if(exos8.getContext)
 {
-    
+    var ctx = exos8.getContext("2d")
+
+    ctx.fillStyle = "green"
+    ctx.fillRect(0, 0, 100, 50)
+    ctx.save()
+
+    ctx.fillStyle = "blue"
+    ctx.translate(300, -40)
+    ctx.rotate(1)
+    ctx.fillRect(0, 0, 350, 150)
+
+
+    ctx.fillStyle = "red"
+    ctx.translate(175, 75)
+    ctx.fillRect(-87, -37.5, 175, 75)
+
+
+    ctx.restore()
+    ctx.fillStyle = "yellow"
+    ctx.fillRect(230,100, 175,75)
 }
+
+
+var demo14 = document.getElementById("demo14")
+if(demo14.getContext)
+{
+    var ctx = demo14.getContext("2d")
+
+    ctx.fillStyle ="DodgerBlue"
+    ctx.fillRect(50, 50, 150, 150)
+
+
+    //ctx.globalCompositeOperation = "source-over"
+    //ctx.globalCompositeOperation = "source-in" // supprime tout sauf les partie commune de la source 2
+    //ctx.globalCompositeOperation = "source-out" // supprime tout de la partie 1 sur la partie deux
+    //ctx.globalCompositeOperation = "source-atop" // supprime tout de la partie 2 qui ne rentre pas dans la partie 1
+    //ctx.globalCompositeOperation = "destination-over" // la partie 1 passe devant la partie 2
+    //ctx.globalCompositeOperation = "destination-in" // la partie 1 passe devant la partie 2, supprime tout sauf les partie commune de la source 2
+    //ctx.globalCompositeOperation = "destination-out" // la partie 1 passe devant la partie 2, supprime tout de la partie 2 sur la partie 1
+    //ctx.globalCompositeOperation = "destination-atop" // la partie 1 passe devant la partie 2, supprime tout de la partie 1 qui ne rentre pas dans la partie 2
+    //ctx.globalCompositeOperation = "lighter" // éclairci la partie commune au deux forme
+    //ctx.globalCompositeOperation = "darken" // assombri la partie commune au deux forme
+    //ctx.globalCompositeOperation = "copy"
+    //ctx.globalCompositeOperation = "xor" // ou exclusif-> supprime les partie commune
+
+
+
+
+    ctx.fillStyle = "MediumSeaGreen"
+    ctx.arc(200, 200, 75, 0, Math.PI*2)
+    ctx.fill()
+}
+
+/*
+var demo15 = document.getElementById("demo15")
+if(demo15.getContext)
+{
+    var ctx = demo15.getContext("2d")
+
+    var img = new Image(250, 250)
+    img.src = './js_logo.jpg'
+
+
+    ctx.beginPath()
+    ctx.arc(200, 200, 150, 0, Math.PI*2)
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.clip()
+
+
+
+
+    img.onload = () => {
+        ctx.drawImage(img, 50, 50)
+    }
+
+}
+*/
+
+
+
+var i = 0
+var xCorp = 250
+var xOeilG = 220
+var xOeilD = 280
+var xBouche = 250
+
+var yCorp = 250
+var yOeilG = 220
+var yOeilD = 220
+var yBouche = 250
+
+var vitesse = 10
+
+
+var demo16 = document.getElementById("demo16")
+if(demo16.getContext)
+{
+    var ctx = demo16.getContext("2d")
+    anim()
+
+}
+
+
+
+
+function anim() {
+    
+    requestAnimationFrame(anim)
+    ctx.clearRect(0, 0, 500, 500)
+
+
+    ctx.fillStyle = "yellow"
+
+    ctx.beginPath()
+    ctx.arc(xCorp, yCorp, 100, 0, Math.PI*2) // x center, y center
+    ctx.stroke()
+    ctx.fill()
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.arc(xOeilG, yOeilG, 10, 0, Math.PI*2)
+    ctx.fillStyle = "white"
+    ctx.stroke()
+    ctx.fill()
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.arc(xOeilD, yOeilD, 10, 0, Math.PI*2)
+    ctx.stroke()
+    ctx.fill()
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.arc(xBouche, yBouche, 80, 0, Math.PI)
+    ctx.stroke()
+    ctx.closePath()
+
+
+    if(xCorp + 100 > 500 || xCorp -100 < 0)
+    {
+        vitesse = -vitesse
+    }
+
+
+
+    xCorp = xCorp + vitesse
+    xOeilD = xOeilD + vitesse
+    xOeilG = xOeilG + vitesse
+    xBouche = xBouche + vitesse
+
+
+    
+    yCorp = yCorp + vitesse
+    yOeilD = yOeilD + vitesse
+    yOeilG = yOeilG + vitesse
+    yBouche = yBouche + vitesse
+}
+
+
