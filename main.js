@@ -518,6 +518,21 @@ if(exos5.getContext)
 {
     var ctx = exos5.getContext("2d")
 
+    const degradeLinear = ctx.createLinearGradient(0, 0, 500, 0)
+
+    degradeLinear.addColorStop(0, 'lightBlue')
+    degradeLinear.addColorStop(1, "RoyalBlue")
+
+    ctx.fillStyle = degradeLinear
+    ctx.fillRect(0, 0, 500, 150)
+
+
+    const degradeRadial = ctx.createRadialGradient(200, 400, 0, 200, 400, 250)
+    degradeRadial.addColorStop(0, 'lightBlue')
+    degradeRadial.addColorStop(1, "RoyalBlue")
+
+    ctx.fillStyle = degradeRadial
+    ctx.fillRect(0, 350, 500, 150)
     
 }
 
@@ -549,5 +564,48 @@ if(exos6.getContext)
 {
     var ctx = exos6.getContext("2d")
 
+    ctx.fillStyle = "blue"
+    ctx.fillRect(50, 50, 150, 150)
     
+    ctx.fillStyle = "red"
+    ctx.globalAlpha = 0.5
+    ctx.arc(220, 200, 75, 0, Math.PI*2)
+    ctx.fill()
+}
+
+
+
+var demo11 = document.getElementById("demo11")
+if(demo11.getContext)
+{
+    var ctx = demo11.getContext("2d")
+
+
+    ctx.font = "30pt Comic Sans MS"
+    ctx.textAlign = "start"
+    ctx.textBaseline = "top"
+    //ctx.textBaseline = "top" || "hanging" || "middle" || "alphabetic" || "ideographic" || "bottom";
+    ctx.strokeStyle = "DarkOliveGreen"
+    ctx.strokeText("Ton thé t'a-t-il", 50,50)
+
+    ctx.font = "50pt Comic Sans MS"
+    ctx.lineWidth = 3
+    ctx.strokeText("ôté ta toux ?", 50,85)
+
+    ctx.font = "20pt Georgia"
+    ctx.textAlign = "right"
+    ctx.fillStyle = "Brown"
+    ctx.fillText("...disait la tortue au tatou", 400, 150)
+
+}
+
+
+
+var exos7 = document.getElementById("exos7")
+if(exos7.getContext)
+{
+    var ctx = exos7.getContext("2d")
+
+
+
 }
