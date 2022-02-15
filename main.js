@@ -606,6 +606,85 @@ if(exos7.getContext)
 {
     var ctx = exos7.getContext("2d")
 
+    ctx.font = "30px Comic Sans MS"
+    ctx.textAlign = "start"
+    ctx.textBaseline = "bottom"
+    ctx.strokeText("Exemple de texte", 50, 50)
+
+    ctx.fillStyle = "blue"
+    ctx.fillText("Autre exemple", 50, 100)
+
+}
 
 
+
+var demo12 = document.getElementById("demo12")
+if(demo12.getContext)
+{
+    var ctx = demo12.getContext("2d")
+
+ 
+    //ctx.translate(50, 50)
+    //ctx.scale(2,2)
+
+    ctx.beginPath()
+    ctx.strokeStyle = "red"
+    ctx.moveTo(0,50)
+    ctx.lineTo(500,50)
+    ctx.stroke()
+
+    ctx.moveTo(50,0)
+    ctx.lineTo(50, 500)
+    ctx.stroke()
+    ctx.closePath()
+
+    //ctx.rotate(15 * Math.PI / 180)
+    ctx.rotate(0.2)
+
+    ctx.strokeStyle = "grey"
+    ctx.strokeRect(50, 50, 400, 250)
+
+    ctx.fillStyle = "red"
+    ctx.fillRect(70, 70, 360, 210)
+
+    ctx.clearRect(175, 155, 150, 40) // _> 400 - 150 = 250 / 2 = 125 + 50 = 175 ///// 250 - 40 = 210 / 2 = 105 + 55 = 155
+    ctx.clearRect(230, 100, 40, 150) // _> 400 - 40 = 360 / 2 = 180 + 50 = 230 ///// 250 - 150 = 100 / 2 = 50 + 50
+
+
+
+}
+
+
+
+var demo13 = document.getElementById("demo13")
+if(demo13.getContext)
+{
+    //save sauvegarde les dernier changement des PROPS !!! du ctx sur une pile
+    //restore remet les values des props en l'état du dernier save connu
+    var ctx = demo13.getContext("2d")
+
+    ctx.fillStyle="black"
+    ctx.fillRect(50, 50, 300, 300)
+    ctx.save()
+
+    ctx.fillStyle="#09F"
+    ctx.fillRect(75, 75, 250, 250)
+    ctx.save()
+
+    ctx.fillStyle="#FFF"
+    ctx.globalAlpha = 0.5
+    ctx.fillRect(100, 100, 200, 200)
+
+    ctx.restore()
+    ctx.fillRect(125, 125, 150, 150)
+
+    ctx.restore()
+    ctx.fillRect(150, 150, 100, 100)
+}
+
+
+var exos8 = document.getElementById("exos8")
+if(exos8.getContext)
+{
+    
 }

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 .demo1, .exos1, .exos2,  .demo2, .demo3, .demo4, .demo5, .exos3, .exos3_5, .demo6, .demo7,.exos3_6, .exos4, .demo8, .demo9
-, .exos5, .demo10, .exos6, .demo11, .demo12, .exos7, .demo13, .demo14, .demo15{
+, .exos5, .demo10, .exos6, .demo11, .demo12, .exos7, .demo13, .demo14, .demo15, .exos8{
     height: 540px;
     width:520px;
     border:1px solid rgb(255, 0, 0);
